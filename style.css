@@ -59,8 +59,17 @@ p {
     height: 500px;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     border: 3px solid black;
-    
+}
+
+.innerDiv {
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+    margin: none;
+    padding: none;
 }
 
 h1 {
@@ -76,3 +85,4 @@ h1 {
     height: 25%;
     border: 1px solid black;
 }
+
