@@ -55,19 +55,18 @@ p {
 
 #drawBoard {
     background-color: gray;
-    width : 500px;
-    height: 500px;
+    width : 506px;
+    height: 506px;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
     border: 3px solid black;
+    margin: none;
+    padding: none;
 }
 
 .innerDiv {
-    width: 15px;
-    height: 15px;
-    border: 1px solid black;
+    width: 50px;
+    height: 50px;
     margin: none;
     padding: none;
 }
