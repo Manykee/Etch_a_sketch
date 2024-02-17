@@ -4,6 +4,9 @@ const container = document.querySelector("#drawBoard");
 const rangeNumber = range.value.toString;
 const inpColor = document.querySelector("#colorInput");
 const innDiv = document.querySelectorAll('.innerDiv');
+const selectColor = document.querySelector("#selectedColor");
+const reset = document.querySelector("#resetBtn");
+
 
 //Show the imputed number
 range.addEventListener("pointermove", inputChange);
@@ -26,8 +29,10 @@ function createDiv(number) {
     for (let i = 0; i < number; i++) {
         const newDiv = document.createElement("div");
         newDiv.setAttribute("class", "innerDiv");
+        newDiv.addEventListener('mouseover', (e) => {
+            e.target.style.backgroundColor = inpColor.value;
+        });
         container.appendChild(newDiv);
-
     };
 };
     
@@ -50,5 +55,15 @@ function divSizeAllocation(number) {
 innDiv.forEach((div)=> {
     div.addEventListener('mouseover', (e) => {
         e.target.style.backgroundColor = inpColor.value;
+    });
+});
+
+inpColor.addEventListener("change", () => {
+    selectColor.style.backgroundColor = inpColor.value;
+});
+
+reset.addEventListener("click", () => {
+    innDiv.forEach((div) => {
+        div.style.backgroundColor = "lightgray";
     });
 });
