@@ -1,11 +1,12 @@
 let number = document.querySelector("#inputedNumber");
 let range = document.querySelector("#range");
-const container = document.querySelector("#drawBoard");
+const container = document.getElementById("drawBoard");
 const rangeNumber = range.value.toString;
 const inpColor = document.querySelector("#colorInput");
 const innDiv = document.querySelectorAll('.innerDiv');
 const selectColor = document.querySelector("#selectedColor");
 const reset = document.querySelector("#resetBtn");
+const eraser = document.querySelector("#eraser");
 
 
 //Show the imputed number
@@ -63,7 +64,15 @@ inpColor.addEventListener("change", () => {
 });
 
 reset.addEventListener("click", () => {
-    innDiv.forEach((div) => {
+    innDiv.forEach(div => {
         div.style.backgroundColor = "lightgray";
     });
+    container.childNodes.forEach(div => {
+        div.style.backgroundColor = "lightgray";
+    });
+});
+
+eraser.addEventListener("click", () => {
+    inpColor.value = "#d3d3d3";
+    selectColor.style.backgroundColor = "lightgray";
 });
