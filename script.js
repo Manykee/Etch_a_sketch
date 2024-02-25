@@ -7,6 +7,7 @@ const innDiv = document.querySelectorAll('.innerDiv');
 const selectColor = document.querySelector("#selectedColor");
 const reset = document.querySelector("#resetBtn");
 const eraser = document.querySelector("#eraser");
+const increment = document.querySelector("#increment");
 
 
 //Show the imputed number
@@ -75,4 +76,18 @@ reset.addEventListener("click", () => {
 eraser.addEventListener("click", () => {
     inpColor.value = "#d3d3d3";
     selectColor.style.backgroundColor = "lightgray";
+});
+
+//gray increment event listener
+increment.addEventListener("click", () => {
+    innDiv.forEach(div => {
+        div.style.backgroundColor = "black";
+        div.style.opacity = "0.01"
+        selectColor.style.backgroundColor = "lightgray";
+        div.addEventListener('mouseover', (e) => {
+            const currentOpacity = div.style.opacity;
+            e.target.style.backgroundColor = "black";
+            e.target.style.opacity = (Number(currentOpacity) + 0.02);
+        });
+    });
 });
